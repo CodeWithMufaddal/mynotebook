@@ -1,13 +1,10 @@
 const connectToMongo = require('./db.js');
 const express = require('express')
+const port = process.env.PORT || 5500
 const app = express()
-const port = 3000
 
 connectToMongo()
 app.use(express.json())
-
-
-
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
